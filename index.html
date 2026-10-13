@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#70d7f5">
+  <title>Al-Mulk Memory Match </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <img
+        src="rsud-al-mulk.png"
+        class="mascot"
+        alt="Logo RSUD Al-Mulk"
+      >
+      <div class="heading">
+        <h1><span>AL-MULK</span> Memory Match</h1>
+        <p class="subtitle">Ayo latih ingatan sambil bermain!</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="settings">
+        <label for="difficulty">Pilih tingkat permainan</label>
+        <select id="difficulty">
+          <option value="easy">Mudah - 6 pasang</option>
+          <option value="medium">Sedang - 8 pasang</option>
+          <option value="hard">Sulit - 12 pasang</option>
+        </select>
+      </div>
+
+      <div class="stats">
+        <div class="stat blue">
+          <span>👣 Langkah</span>
+          <strong id="moves">0</strong>
+        </div>
+        <div class="stat green">
+          <span>⏱️ Waktu</span>
+          <strong id="timer">00:00</strong>
+        </div>
+        <div class="stat yellow">
+          <span>⭐ Pasangan</span>
+          <strong id="matches">0/6</strong>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="gameBoard"
+      class="game-board"
+      aria-label="Papan kartu memori"
+    ></section>
+
+    <section id="result" class="result" hidden>
+      <div class="result-emoji">🎉</div>
+      <h2>Hebat sekali!</h2>
+      <p id="resultText"></p>
+      <p>Kamu sudah menyelesaikan permainan. Istirahatlah jika perlu.</p>
+      <button id="playAgain" class="primary-btn">
+        🔄 Main Lagi
+      </button>
+    </section>
+
+    <div class="controls">
+      <button id="restart" class="primary-btn" type="button">
+        ↻ Mulai Ulang
+      </button>
+      <button id="musicToggle" class="primary-btn" type="button" aria-label="Matikan backsound" aria-pressed="false">
+        🔊 Backsound
+      </button>
+    </div>
+
+    <audio id="bgAudio" loop preload="auto" playsinline>
+      <source src="backsound kids.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cardClickAudio" preload="auto">
+      <source src="klik.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cardMatchAudio" preload="auto">
+      <source src="benar.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cardMismatchAudio" preload="auto">
+      <source src="salah.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameCompleteAudio" preload="auto">
+      <source src="selesai.mp3" type="audio/mpeg">
+    </audio>
+
+    <footer>
+      <p>🌼 Bermain dengan santai, tidak perlu terburu-buru.</p>
+      <p class="disclaimer">
+        Game edukasi untuk latihan kognitif. Bukan alat diagnosis
+        atau pengganti terapi profesional.
+      </p>
+      <p class="brand">— RSUD AL-MULK —</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
